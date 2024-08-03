@@ -1,0 +1,43 @@
+﻿<Page
+    x:Class="SimpleConverter.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:SimpleConverter"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid x:Name="UIGrid" Background="#FF82B94C" HorizontalAlignment="Stretch" ScrollViewer.VerticalScrollBarVisibility="Disabled" Margin="0,0,0,0" VerticalAlignment="Stretch">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid x:Name="TitleBar">
+            <Rectangle x:Name="BackgroundElement" Fill="Transparent" />
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="Auto" />
+                </Grid.ColumnDefinitions>
+                <Image Height="40" VerticalAlignment="Top" Source="Assets/Store/StoreLogo.png" />
+            </Grid>
+        </Grid>
+        <TextBox x:Name="NumIn" Grid.Row="0" Grid.Column="1" Margin="0,0,75,0" HorizontalAlignment="Left" Height="50" VerticalAlignment="Center" Width="280" Background="#FFA9D67D" PlaceholderText="Enter Number To Convert" TabIndex="1" IsTabStop="True" FontSize="20" TextWrapping="NoWrap" ScrollViewer.HorizontalScrollBarVisibility="Auto"/>
+        <TextBlock x:Name="ConversionType" Grid.Column="1" Grid.Row="1" VerticalAlignment="Top" HorizontalAlignment="Center" Width="250" Height="40" FontSize="20" TextAlignment="Center" TextWrapping="NoWrap" IsTapEnabled="False" Text="Conversion Type" />
+        <TextBlock x:Name="NumOut" Grid.Row="1" Grid.Column="1" Margin="0, 50, 0, 0" HorizontalAlignment="Center" Height="50" Text="Output" VerticalAlignment="Bottom" Width="350" FontSize="20" TextAlignment="Center" TextWrapping="NoWrap" IsTapEnabled="False" ScrollViewer.HorizontalScrollBarVisibility="Auto" IsTextSelectionEnabled="True"/>
+        <Button x:Name="ExitBtn" Grid.Row="2" Grid.Column="1" Content="Exit" HorizontalAlignment="Center" Height="50" VerticalAlignment="Center" Width="200" Background="#FFA9D67D" FontSize="20" TabIndex="3" IsTabStop="True" ScrollViewer.VerticalScrollBarVisibility="Disabled"/>
+        <Button x:Name="ConversionFlyoutBtn" Content="V" Grid.Row="0" Grid.Column="1" HorizontalAlignment="Right" Height="50" VerticalAlignment="Center" Width="61" Background="#FFA9D67D" FontSize="20" TabIndex="2" IsTabStop="True">
+            <Button.Flyout>
+                <Flyout x:Name="ConversionMenu" Placement="Bottom">
+                    <StackPanel x:Name="FlyoutPanel" />
+                </Flyout>
+            </Button.Flyout>
+        </Button>
+    </Grid>
+</Page>
